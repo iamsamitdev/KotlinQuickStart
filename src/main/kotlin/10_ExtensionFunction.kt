@@ -1,0 +1,1 @@
+fun String.addExclamationMark() = "$this!"

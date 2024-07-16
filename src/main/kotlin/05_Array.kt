@@ -62,6 +62,43 @@ fun kArray() {
 
     println("-----------------")
 
+    // numbers คือ List ที่ไม่สามารถเพิ่มสมาชิกได้
+    val numbers: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+    // mutableNumbers คือ MutableList ที่สามารถเพิ่มสมาชิกได้
+    val mutableNumbers: MutableList<Int> = mutableListOf(1, 2, 3, 4, 5)
+
+    println("numbers: $numbers")
+    println("mutableNumbers: $mutableNumbers")
+
+    // add() เพิ่มสมาชิกใหม่
+    // numbers.add(10) //Error เพราะ numbers เป็น List ที่ไม่สามารถเพิ่มสมาชิกได้
+    mutableNumbers.add(6)
+    println("After add:  $mutableNumbers")
+
+    // removeAt() ลบสมาชิกตามตำแหน่งที่กำหนด
+    mutableNumbers.removeAt(2)
+    println("After remove at index:2  $mutableNumbers")
+
+    // remove() ลบสมาชิกที่กำหนด
+    mutableNumbers.remove(4)
+    println("After remove 4  $mutableNumbers")
+
+    // clear() ลบสมาชิกทั้งหมด
+    mutableNumbers.clear()
+    println("After clear  $mutableNumbers")
+
+    // การใช้ filter() และ map()
+    // การใช้ filter()
+    val evenNumbers = numbers.filter { it % 2 == 0 }
+    println("Even numbers: $evenNumbers")
+
+    // การใช้ map()
+    val squaredNumbers = numbers.map { it * it }
+    println("Squared numbers: $squaredNumbers")
+
+    println("-----------------")
+
     // ฟังก์ชันสำหรับการคำนวณ
     val radius = 10.0
     val circleArea = PI * radius.pow(2)
